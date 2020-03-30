@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Someone">
+    <meta name="description" content="Nothing to see bro, keep scrolling the bar">
+    <title>Home Page</title>
+    <!--BOOSTRAP 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--CUSTOM CC-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">PythonWebApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="/">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('about')}}">INFO</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container p-4">
+        {% block content %}
+        {% endblock%}
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+    <footer ml-auto>ALL RIGHTS RESERVE 2020-2025</footer>
+
+</body>
+
+</html>
